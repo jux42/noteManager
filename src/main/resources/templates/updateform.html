@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="flex flex-row justify-around space-x-4  p-8 mx-80">
+    <form   action=# th:action="@{/note/update/{id}(id = ${note.id})}" th:object="${note}" method="post">
+        <input type="hidden" name="_method" value="put" />
+        <p>title: <input type="text" th:field="${note.title}" /></p>
+        <p>content: <input type="text" th:field="${note.content}" /></p>
+        <p>author: <input type="text" th:field="${note.author}" /></p>
+        <p><input type="submit" value="MODIFIER" /> <input type="reset" value="Reset" /></p>
+    </form>
+</div>
+</body>
+</html>
